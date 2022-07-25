@@ -1,8 +1,11 @@
 const express = require('express')
 const app = express()
+const emailRouter = require('./router')
 
-app.use(cors());
-app.use(express.json());
+app.use(cors())
+app.use(express.json())
+
+app.use(emailRouter)
 
 app.get('/',(req,res) => {
     res.send('Hello Worsld')
